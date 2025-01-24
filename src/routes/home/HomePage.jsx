@@ -1,4 +1,4 @@
-import crystalClear from "../crystalClear.jpg"
+import crystalClear from "./crystalClear.jpg"
 
 const HomePage = () => {
     return(
