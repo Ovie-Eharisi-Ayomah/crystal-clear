@@ -1,0 +1,14 @@
+/* Container for New Job Requests */
+.new-job-requests-container {
+padding: 20px;
+max-width: 1200px;
+margin: auto;
+}
+
+/* Job Card Grid */
+.job-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+gap: 20px; /* Space between cards */
+justify-content: center;
+}

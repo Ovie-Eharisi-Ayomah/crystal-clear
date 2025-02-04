@@ -1,0 +1,60 @@
+/* Dashboard Page Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e6f7ff; /* Light blue background */
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+  }
+  
+  /* Button Container */
+  .dashboard-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Increased spacing between buttons */
+    width: 100%;
+    max-width: 600px; /* Makes the buttons take up more space */
+  }
+  
+  /* Link Wrapper (Fixes Inline Issues) */
+  .dashboard-link {
+    display: block; /* Ensures links behave like blocks */
+    width: 100%;
+  }
+  
+  /* Dashboard Buttons */
+  .dashboard-button {
+    width: 100%; /* Makes buttons take full width of their container */
+    padding: 18px 20px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Slightly more rounded corners */
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dashboard-button:hover {
+    background-color: #005f8a;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dashboard-buttons-container {
+      width: 90%;
+    }
+  
+    .dashboard-button {
+      font-size: 1.2rem;
+      padding: 16px 18px;
+    }
+  }
+  

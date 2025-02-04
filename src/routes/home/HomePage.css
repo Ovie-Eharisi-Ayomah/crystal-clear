@@ -1,0 +1,103 @@
+/* General Homepage Styling */
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e6f7ff; /* Light blue background for a clean, fresh look */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    }
+    
+    /* Content Container */
+    .homepage-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures equal height for both sections */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+    gap: 20px;
+    }
+    
+    /* Headline and Buttons Section */
+    .headline-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    }
+    
+    .headline-buttons-container h1 {
+    font-size: 2.5rem;
+    color: #0077b6; /* Deep sky blue */
+    margin-bottom: 30px;
+    }
+    
+    /* Buttons */
+    .cleaner-cta-button,
+    .homeowner-cta-button {
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px; /* Slightly rounded corners */
+    cursor: pointer;
+    margin-bottom: 15px; /* Adds spacing between stacked buttons */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    width: 80%; /* Makes buttons larger */
+    }
+    
+    .cleaner-cta-button {
+    background-color: #0077b6;
+    color: white;
+    }
+    
+    .cleaner-cta-button:hover {
+    background-color: #005f8a;
+    transform: scale(1.05);
+    }
+    
+    .homeowner-cta-button {
+    background-color: white;
+    color: #0077b6;
+    border: 1px solid #0077b6;
+    }
+    
+    .homeowner-cta-button:hover {
+    background-color: #e8f7ff;
+    transform: scale(1.05);
+    }
+    
+    /* Image Section */
+    .image-container {
+    flex: 1; /* Matches the height of the headline-buttons section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Layout Adjustments for Smaller Screens */
+    @media (max-width: 768px) {
+    .homepage-content-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+    
+    .cleaner-cta-button,
+    .homeowner-cta-button {
+        width: 100%; /* Makes buttons fill the container on smaller screens */
+    }
+    
+    .image-container img {
+        margin-top: 20px;
+    }
+    }
+    

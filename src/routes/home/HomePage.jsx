@@ -1,4 +1,5 @@
 import crystalClear from "./crystalClear.jpg"
+import "./HomePage.css"
 
 const HomePage = () => {
     return(
