@@ -1,25 +1,34 @@
 import { Link } from "react-router-dom";
 import "./CleanerDashboard.css";
 
+// Define an array of button configurations
+const dashboardButtons = [
+  { route: "/newJobRequests", label: "New Job Requests" },
+  { route: "/quotedJobRequests", label: "Quoted Job Requests" },
+  { route: "/acceptedJobRequests", label: "Accepted Job Requests" },
+  { route: "/completedJobRequests", label: "Completed Job Requests" },
+];
+
 const CleanerDashboard = () => {
-    return (
-        <div className="dashboard-container">
-            <div className="dashboard-buttons-container">
-                <Link to="/newJobRequests" className="dashboard-link">
-                    <button className="dashboard-button">New Job Requests</button>
-                </Link>
-                <Link to="/quotedJobRequests" className="dashboard-link">
-                    <button className="dashboard-button">Quoted Job Requests</button>
-                </Link>
-                <Link to="/acceptedJobRequests" className="dashboard-link">
-                    <button className="dashboard-button">Accepted Job Requests</button>
-                </Link>
-                <Link to="/completedJobRequests" className="dashboard-link">
-                    <button className="dashboard-button">Completed Job Requests</button>
-                </Link>
+  return (
+    <div className="dashboard-container">
+      <div className="dashboard-buttons-container">
+        {dashboardButtons.map((btn) => (
+          <Link key={btn.route} to={btn.route} className="dashboard-link">
+            {/* Instead of nesting a <button> inside a <Link>, we style the Link directly */}
+            <div
+              className="dashboard-button"
+              role="button"
+              tabIndex="0"
+              aria-label={btn.label}
+            >
+              {btn.label}
             </div>
-        </div>
-    );
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default CleanerDashboard;

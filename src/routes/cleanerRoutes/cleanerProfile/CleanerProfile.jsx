@@ -2,16 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./CleanerProfile.css";
 
-const CleanerProfile = () => {
-  const [cleaner, setCleaner] = useState({
-    name: "John Doe",
-    email: "john.doe@example.com",
-    phone: "+1234567890",
-    serviceArea: "Newcastle",
-    experience: "5 years",
-    bio: "Professional window cleaner",
-    profilePicture: ""
-  });
+const CleanerProfile = ({cleaner}) => {
+
 return (
   <div className="profile-page">
   <div className="profile-container">

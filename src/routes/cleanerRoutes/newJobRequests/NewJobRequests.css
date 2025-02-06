@@ -1,14 +1,64 @@
-/* Container for New Job Requests */
+/* Container for the New Job Requests page */
+
 .new-job-requests-container {
-padding: 20px;
-max-width: 1200px;
-margin: auto;
+  padding: 20px;
+  width: 100%;
+  /* Remove max-width so the container uses the full width on large screens */
+  background-color: white; /* Light blue background matching the app's theme */
+  font-family: Arial, sans-serif;
 }
 
-/* Job Card Grid */
+/* Header styling for the page title */
+.new-job-requests-container h2 {
+  font-size: 2rem;
+  color: #0077b6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for job cards */
 .job-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-gap: 20px; /* Space between cards */
-justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Space between job cards */
+  justify-items: center; /* Center each grid item horizontally */
+}
+
+/* Link wrapper for each job card */
+.job-card-link {
+  text-decoration: none; /* Remove default underline */
+  display: block;        /* Ensures the link takes full width of its grid cell */
+  /* Constrain the width to match the card size and center it */
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  color: inherit;        /* Inherit text color so styling inside is maintained */
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 768px) {
+  .new-job-requests-container {
+    padding: 15px;
+  }
+  .new-job-requests-container h2 {
+    font-size: 1.75rem;
+  }
+  .job-grid {
+    gap: 15px;
+    justify-items: center;
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .new-job-requests-container {
+    padding: 10px;
+  }
+  .new-job-requests-container h2 {
+    font-size: 1.5rem;
+  }
+  .job-grid {
+    gap: 10px;
+    justify-items: center;
+  }
 }

@@ -1,0 +1,99 @@
+/* JobDetails.css */
+
+/* Container for the job details page */
+.job-details-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.job-details-title {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Date and time styling */
+.job-details-date-time {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for job info */
+.job-details-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.job-details-info p {
+  flex: 1 1 200px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Additional information styling */
+.job-details-additional {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Actions section */
+.job-details-actions {
+  text-align: center;
+}
+
+/* Call-to-Action button styling */
+.job-details-cta {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.job-details-cta:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 768px) {
+  .job-details-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  .job-details-title {
+    font-size: 1.75rem;
+  }
+  .job-details-date-time {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .job-details-title {
+    font-size: 1.5rem;
+  }
+  .job-details-info p {
+    font-size: 0.9rem;
+  }
+}

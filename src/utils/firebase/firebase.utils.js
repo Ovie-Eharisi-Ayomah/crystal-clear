@@ -2,7 +2,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, 
     signInWithRedirect, 
     signInWithPopup,
-    GoogleAuthProvider 
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword, 
 } from 'firebase/auth';
 import {  
     getFirestore,
@@ -34,36 +35,42 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth) => {
-    const userDocRef = doc(db, 'users', userAuth.uid);
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
+  if(!userAuth) return;
+  const userDocRef = doc(db, 'users', userAuth.uid);
 
-    console.log(userDocRef);
+  console.log(userDocRef);
 
-    const userSnapshot = await getDoc(userDocRef);
-    console.log(userSnapshot);
-    console.log(userSnapshot.exists());
+  const userSnapshot = await getDoc(userDocRef);
+  console.log(userSnapshot);
+  console.log(userSnapshot.exists());
 
-    if(!userSnapshot.exists()){
-        const { displayName, email } = userAuth;
-        const createdAt = new Date();
+  if(!userSnapshot.exists()){
+      const { displayName, email } = userAuth;
+      const createdAt = new Date();
 
-        try {
-            await setDoc(userDocRef, {
-                displayName,
-                email,
-                createdAt
-            });
-        } catch (error) {
-            console.log('error creating the user', error.message)
-        }
-    
-    return userDocRef;
-    }
+      try {
+          await setDoc(userDocRef, {
+              displayName,
+              email,
+              createdAt,
+              ...additionalInformation,
+          });
+      } catch (error) {
+          console.log('error creating the user', error.message)
+      }
+  }
+  return userDocRef;
 
-    // if user data does not exist
-    // create/set the document with the data from userAuth in my collecttion
+  // if user data does not exist
+  // create/set the document with the data from userAuth in my collecttion
 
-    // if user data exists
-        // return user data
+  // if user data exists
+      // return user data
 
+};
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if(!email || !password) return;
+  return await createUserWithEmailAndPassword(auth, email, password)
 }

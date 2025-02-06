@@ -121,3 +121,23 @@
     padding: 10px 12px;
   }
 }
+
+/* Cancel Button Styling */
+.cancel-button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #aaa;
+  transform: scale(1.02);
+}

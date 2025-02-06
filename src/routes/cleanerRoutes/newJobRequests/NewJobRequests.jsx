@@ -1,34 +1,20 @@
-import JobCardComponent from "../../../components/cleanerComponents/jobCard/JobCardComponent"
-import { Link } from "react-router-dom"
+import React from "react";
+import JobCardComponent from "../../../components/cleanerComponents/jobCard/JobCardComponent";
+import { newJobRequests } from "../../../data/jobRequests/newJobRequests";
 import "./NewJobRequests.css";
 
-const NewJobRequests = ({homeownerJobDetails}) => {
-    const jobCards = homeownerJobDetails.map((detail, i) => {
-        return(
-            <JobCardComponent 
-            key={i}
-            name={detail.homeownwerName}
-            postcode={detail.postcode}
-            propertyType={detail.propertyType}
-            numberOfFloors={detail.numberOfFloors}
-            numberOfWindows={detail.numberOfWindows}
-            jobDate={detail.jobDate}
-            jobTime={detail.jobTime}
-            />
+const NewJobRequests = () => {
+  return (
+    <div className="new-job-requests-container">
+      <h2>New Job Requests</h2>
+      <div className="job-grid">
+        {newJobRequests.map((job) => (
+          // Pass the entire job object as the "job" prop.
+          <JobCardComponent key={job.id} job={job} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-        )
-    })
-    return(
-        <div className="new-job-requests-container">
-            {/* <h2>New Job Requests</h2> */}
-            <Link to="/jobDetails">
-            <div className="job-grid">
-                {jobCards}
-            </div>
-            </Link>
-        </div>
-        
-    )
-}
-
-export default NewJobRequests
+export default NewJobRequests;

@@ -1,60 +1,60 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { useParams } from "react-router-dom";
+import "./JobDetails.css";
+import { newJobRequests } from "../../../data/jobRequests/newJobRequests";
 
-const JobDetailsComponent = (props) => {
-    const {additionalInfo, homeownerName, windowTypes, propertyType, numberOfFloors, numberOfWindows, postcode, jobDate, jobTime} = props
-    return(
-        <div>
-            <div className="back-button-container">
-                <button className="back-button">back</button>
-            </div>
+const JobDetails = () => {
+  // Extract the jobId parameter from the URL
+  const { jobId } = useParams();
 
-            <div className="homeownwer-info">
-                <div className="profile-photo-container">
-                    <img src=" " alt="profile"/>
-                </div>
-                <div className="name-location-container">
-                    <label>{homeownerName}</label>
-                    <label>{postcode}</label>
-                </div>
-            </div>
+  // Find the job that matches the jobId (assuming jobId is a number)
+  const job = newJobRequests.find((job) => job.id === parseInt(jobId));
 
-            <section className="date-time-container">
-                <label>Date</label>
-                <label>{jobDate}</label>
-                <br />
-                <label>Time</label>
-                <label>{jobTime}</label>
-            </section>
-            <section className="property-details">
-                <label>Property Details</label>
-                <div>
-                    <label>Property Type</label>
-                    <label>{propertyType}</label>
-                    <br />
-                    <label>No of floors</label>
-                    <label>{numberOfFloors}</label>
-                    <br />
-                    <label>No of windows</label>
-                    <label>{numberOfWindows}</label>
-                    <br />
-                    <label>Window types</label>
-                    <label>{windowTypes}</label>
-                </div>
-            </section>
+  // If no job is found, display a "not found" message
+  if (!job) {
+    return (
+      <div className="job-details-container">
+        <h2>Job Not Found</h2>
+      </div>
+    );
+  }
 
-            <section className="additional-info">
-                <label>Additional info</label>
-                <label className="short-bio">{additionalInfo}</label>
-            </section>
+  return (
+    <div className="job-details-container">
+      <h2 className="job-details-title">
+        {job.propertyType} in {job.postCode}
+      </h2>
+      <p className="job-details-date-time">
+        📅 {job.jobDate} | ⏰ {job.jobTime}
+      </p>
 
-            <section className="photos">
-                <label>Photos</label>
-            </section>
+      <div className="job-details-info">
+        <p>
+          <strong>Floors:</strong> {job.numberOfFloors}
+        </p>
+        <p>
+          <strong>Windows:</strong> {job.numberOfWindows}
+        </p>
+        <p>
+          <strong>Window Types:</strong> {job.windowTypes}
+        </p>
+      </div>
 
+      {job.additionalInfo && (
+        <div className="job-details-additional">
+          <p>
+            <strong>Additional Info:</strong>
+          </p>
+          <p>{job.additionalInfo}</p>
         </div>
-    )
-    
-}
+      )}
 
-export default JobDetailsComponent
+      <div className="job-details-actions">
+        {/* Example Call-to-Action Button */}
+        <button className="job-details-cta">Submit Quote</button>
+      </div>
+    </div>
+  );
+};
+
+export default JobDetails;

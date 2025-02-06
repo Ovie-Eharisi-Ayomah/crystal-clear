@@ -11,15 +11,32 @@ import UpdateCleanerProfile from "./routes/cleanerRoutes/updateCleanerProfile/Up
 import CleanerDashboard from "./routes/cleanerRoutes/cleanerDashboard/CleanerDashboard";
 import NewJobRequests from "./routes/cleanerRoutes/newJobRequests/NewJobRequests"
 import JobDetails from "./routes/cleanerRoutes/jobDetails/JobDetails";
-import { homeownerJobDetails } from "./data/homeownerJobDetails"
+import AcceptedJobRequests from "./routes/cleanerRoutes/acceptedJobRequests/AcceptedJobRequests";
+import CompletedJobRequests from "./routes/cleanerRoutes/completedJobRequests/CompletedJobRequests";
+import QuotedJobRequests from "./routes/cleanerRoutes/quotedJobRequests/QuotedJobRequests";
 function App() {
-  const [cleaner, setCleaner] = useState(cleanerProfiles.find(profile => profile.id === 1)
-  );
+  // const [cleaner, setCleaner] = useState(cleanerProfiles.find(profile => profile.id === 1)
+  // );
 
-  // updateCleaner function: receives updated profile data and updates the state
+  // // updateCleaner function: receives updated profile data and updates the state
+  // const updateCleaner = (updatedData) => {
+  //   // Update the cleaner state with the new data
+  //   setCleaner(updatedData);
+  //   console.log("Cleaner profile updated:", updatedData);
+  // };
+
+  // Load from localStorage or use the profile with id 1 from cleanerProfiles as default
+  const loadCleanerProfile = () => {
+    const storedProfile = localStorage.getItem("cleanerProfile");
+    return storedProfile ? JSON.parse(storedProfile) : cleanerProfiles.find(p => p.id === 1);
+  };
+
+  const [cleaner, setCleaner] = useState(loadCleanerProfile());
+
+  // Update the cleaner and store the updated data in localStorage
   const updateCleaner = (updatedData) => {
-    // Update the cleaner state with the new data
     setCleaner(updatedData);
+    localStorage.setItem("cleanerProfile", JSON.stringify(updatedData));
     console.log("Cleaner profile updated:", updatedData);
   };
 
@@ -30,14 +47,14 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
-          <Route path="cleanerProfile" element={<CleanerProfile />} />
+          <Route path="cleanerProfile" element={<CleanerProfile cleaner={cleaner}/>} />
           <Route path="updateCleanerProfile" element={<UpdateCleanerProfile cleaner={cleaner} updateCleaner={updateCleaner} />} />
           <Route path="cleanerDashboard" element={<CleanerDashboard />} />
-          <Route path="newJobRequests" element={<NewJobRequests homeownerJobDetails={homeownerJobDetails}/>} />
-          <Route path="quotedJobRequests" element={<NewJobRequests homeownerJobDetails={homeownerJobDetails}/>} />
-          <Route path="acceptedJobRequests" element={<NewJobRequests homeownerJobDetails={homeownerJobDetails}/>} />
-          <Route path="completedJobRequests" element={<NewJobRequests homeownerJobDetails={homeownerJobDetails}/>} />
-          <Route path="jobDetails" element={<JobDetails homeownerJobDetails={homeownerJobDetails}/>} />
+          <Route path="newJobRequests" element={<NewJobRequests />} />
+          <Route path="quotedJobRequests" element={<QuotedJobRequests />} />
+          <Route path="acceptedJobRequests" element={<AcceptedJobRequests />} />
+          <Route path="completedJobRequests" element={<CompletedJobRequests />} />
+          <Route path="jobDetails/:jobId" element={<JobDetails />} />
         </Route>
         
       </Routes>
