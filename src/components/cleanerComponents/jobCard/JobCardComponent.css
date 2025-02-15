@@ -1,0 +1,82 @@
+/* Link wrapper styling: ensures the job card is centered and has a fixed max-width */
+/* * {
+  box-sizing: border-box;
+} */
+
+.job-card-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  color: inherit;
+}
+
+/* Job card styling */
+.job-card {
+  background-color: white;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  padding: 10px;
+  /* Ensure the card is wider than it is tall */
+  height: 180px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.job-card:hover {
+  background-color: #e6f7ff;
+  transform: scale(1.02);
+}
+
+/* Header section of the job card */
+.job-card-header {
+  margin-bottom: 5px;
+}
+
+.job-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0077b6;
+  margin: 0;
+}
+
+.job-card-date {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Information section for job details */
+.job-card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Footer section for the call-to-action text */
+.job-card-footer {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+.job-card-details-text {
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .job-card-link {
+    max-width: 100%;
+  }
+  .job-card {
+    height: 170px; /* Slightly adjust height on mobile if needed */
+  }
+}

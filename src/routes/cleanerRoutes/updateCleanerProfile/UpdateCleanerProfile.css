@@ -1,0 +1,143 @@
+/* Profile Page Container */
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* Light blue background */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Profile Container (Main Card) */
+.profile-container {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Profile Title */
+.profile-title {
+  color: #0077b6;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Profile Picture Container */
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Profile Picture */
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #0077b6;
+  object-fit: cover;
+}
+
+/* Profile Picture Upload Input */
+.profile-picture-upload {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Profile Form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Profile Label */
+.profile-label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/* Profile Input & Textarea */
+.profile-input,
+.profile-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.profile-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Save Profile Button */
+.save-profile-button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.save-profile-button:hover {
+  background-color: #005f8a;
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+    padding: 20px;
+  }
+  .profile-title {
+    font-size: 1.4rem;
+  }
+  .profile-input,
+  .profile-textarea {
+    font-size: 0.95rem;
+  }
+  .save-profile-button {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Cancel Button Styling */
+.cancel-button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #aaa;
+  transform: scale(1.02);
+}

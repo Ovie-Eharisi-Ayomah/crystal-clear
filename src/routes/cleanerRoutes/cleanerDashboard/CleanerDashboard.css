@@ -1,0 +1,64 @@
+/* CleanerDashboard.css */
+
+/* Container for the entire dashboard page */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e6f7ff; /* Light blue background */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Container for all dashboard buttons */
+.dashboard-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between buttons */
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Style for the Link wrapper to remove default text decoration and ensure full width */
+.dashboard-link {
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Dashboard button styling (applied to the inner div with role="button") */
+.dashboard-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background-color: white;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  color: #0077b6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state for the dashboard button */
+.dashboard-button:hover {
+  background-color: #0077b6;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-buttons-container {
+    gap: 15px;
+  }
+  
+  .dashboard-button {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
