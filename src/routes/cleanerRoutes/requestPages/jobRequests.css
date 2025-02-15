@@ -1,0 +1,83 @@
+/* Container for the New Job Requests page */
+.requests-container {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f8ff; /* Light blue background */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header: Back button and page title */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button-link {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.back-button {
+  background-color: white;
+  color: #0077b6;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0077b6;
+  color: white;
+  transform: scale(1.05);
+}
+
+.page-title {
+  flex: 1;
+  font-size: 2rem;
+  color: #0077b6;
+  text-align: center;
+}
+
+/* Grid layout for job cards */
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Less space between cards */
+  justify-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .new-job-requests-container {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
+  
+  .job-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-job-requests-container {
+    padding: 10px;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  /* On very small screens, ensure one card per row */
+  .job-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import {
     signInWithGooglePopup,
@@ -18,6 +18,7 @@ const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const navigate = useNavigate()
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
   }
@@ -35,13 +36,15 @@ const SignUp = () => {
       );
 
       console.log(user);
-      await createUserDocumentFromAuth(user, {displayName})
-      resetFormFields()
+      await createUserDocumentFromAuth(user, {displayName});
+      resetFormFields();
+      // Redirect to the Cleaner Dashboard after successful Google sign-in
+      navigate("/cleanerDashboard");
     } catch(error) {
       if(error.code === 'auth/email-already-in-use'){
         alert('Cannot create user, email already in use');
       }
-      console.error('user creation encountered an error: ', error)
+      console.error('user creation encountered an error: ', error);
     }
   }
   
@@ -53,6 +56,8 @@ const SignUp = () => {
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
     await createUserDocumentFromAuth(user);
+    // Redirect to the Cleaner Dashboard after successful Google sign-in
+    navigate("/cleanerDashboard");
   };
 
   return (

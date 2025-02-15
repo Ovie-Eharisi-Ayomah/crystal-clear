@@ -1,4 +1,4 @@
-// src/data/acceptedJobRequests.js
+// src/data/jobRequests/acceptedJobRequests.js
 
 export const acceptedJobRequests = [
   {
@@ -12,7 +12,8 @@ export const acceptedJobRequests = [
     numberOfWindows: 15,
     windowTypes: "skylight",
     additionalInfo: "Take note of the ladder; be careful of the dogs.",
-    status: "Accepted",
+    quote: 130,
+    status: "accepted",
     homeownerContact: "+441234567890",
     photos: []
   },
@@ -27,7 +28,8 @@ export const acceptedJobRequests = [
     numberOfWindows: 20,
     windowTypes: "tinted",
     additionalInfo: "Quick turnaround required.",
-    status: "Accepted",
+    quote: 180,
+    status: "accepted",
     homeownerContact: "+441112223334",
     photos: []
   }

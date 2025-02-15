@@ -1,4 +1,4 @@
-// src/data/completedJobRequests.js
+// src/data/jobRequests/completedJobRequests.js
 
 export const completedJobRequests = [
   {
@@ -12,7 +12,7 @@ export const completedJobRequests = [
     numberOfWindows: 25,
     windowTypes: "tinted",
     additionalInfo: "Ensure windows are streak-free.",
-    status: "Completed",
+    status: "completed",
     review: {
       rating: 5,
       comment: "Excellent service! The cleaner was professional and efficient."
@@ -30,7 +30,7 @@ export const completedJobRequests = [
     numberOfWindows: 12,
     windowTypes: "standard",
     additionalInfo: "Pay attention to the upstairs windows.",
-    status: "Completed",
+    status: "completed",
     review: {
       rating: 4,
       comment: "Good service overall, but a bit slow on the stairs."

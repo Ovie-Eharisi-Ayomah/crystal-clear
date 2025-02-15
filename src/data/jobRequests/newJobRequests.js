@@ -1,4 +1,4 @@
-// src/data/newJobRequests.js
+// src/data/jobRequests/newJobRequests.js
 
 export const newJobRequests = [
   {
@@ -12,6 +12,7 @@ export const newJobRequests = [
     numberOfWindows: 10,
     windowTypes: "standard",
     additionalInfo: "Please be careful with the garden.",
+    status: "new",
     photos: []
   },
   {
@@ -25,6 +26,7 @@ export const newJobRequests = [
     numberOfWindows: 8,
     windowTypes: "bay",
     additionalInfo: "No pets, please.",
+    status: "new",
     photos: []
   }
 ];

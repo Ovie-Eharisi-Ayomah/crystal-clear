@@ -1,6 +1,4 @@
-/* JobDetails.css */
-
-/* Container for the job details page */
+/* Container for the Job Details page */
 .job-details-container {
   max-width: 800px;
   margin: 20px auto;
@@ -11,7 +9,24 @@
   font-family: Arial, sans-serif;
 }
 
-/* Title styling */
+/* Back Button */
+.back-button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+/* Header Section */
 .job-details-title {
   font-size: 2rem;
   color: #0077b6;
@@ -19,7 +34,6 @@
   text-align: center;
 }
 
-/* Date and time styling */
 .job-details-date-time {
   font-size: 1.2rem;
   color: #555;
@@ -27,7 +41,11 @@
   margin-bottom: 20px;
 }
 
-/* Grid layout for job info */
+.job-details-icon {
+  margin-right: 5px;
+}
+
+/* Job Information Section */
 .job-details-info {
   display: flex;
   flex-wrap: wrap;
@@ -42,7 +60,7 @@
   color: #333;
 }
 
-/* Additional information styling */
+/* Additional Information Section */
 .job-details-additional {
   margin-bottom: 20px;
   padding: 15px;
@@ -52,12 +70,30 @@
   color: #333;
 }
 
-/* Actions section */
+/* Actions Section */
 .job-details-actions {
   text-align: center;
+  margin-top: 20px;
 }
 
-/* Call-to-Action button styling */
+/* New Job Request Actions */
+.new-job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.quote-message-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Common Call-to-Action Button */
 .job-details-cta {
   background-color: #0077b6;
   color: white;
@@ -74,7 +110,87 @@
   transform: scale(1.05);
 }
 
-/* Responsive adjustments for medium screens */
+/* Quote Recap Section */
+.quote-recap {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Withdraw Quote Button */
+.withdraw-quote-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.withdraw-quote-button:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* Accepted Job Request Actions */
+.accepted-job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-customer-button,
+.mark-completed-button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-customer-button:hover,
+.mark-completed-button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+.cancel-booking-button {
+  background-color: #dc3636;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.cancel-booking-button:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* Completed Job Request Review */
+.completed-job-review {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive Adjustments for Medium Screens */
 @media (max-width: 768px) {
   .job-details-container {
     margin: 10px;
@@ -86,14 +202,25 @@
   .job-details-date-time {
     font-size: 1rem;
   }
+  .job-details-info p {
+    font-size: 0.95rem;
+  }
 }
 
-/* Responsive adjustments for small screens */
+/* Responsive Adjustments for Small Screens */
 @media (max-width: 480px) {
   .job-details-title {
     font-size: 1.5rem;
   }
   .job-details-info p {
     font-size: 0.9rem;
+  }
+  .job-details-cta,
+  .withdraw-quote-button,
+  .contact-customer-button,
+  .mark-completed-button,
+  .cancel-booking-button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
   }
 }

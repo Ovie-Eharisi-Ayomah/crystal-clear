@@ -9,11 +9,11 @@ import Login from "./routes/login/Login";
 import CleanerProfile from "./routes/cleanerRoutes/cleanerProfile/CleanerProfile";
 import UpdateCleanerProfile from "./routes/cleanerRoutes/updateCleanerProfile/UpdateCleanerProfile";
 import CleanerDashboard from "./routes/cleanerRoutes/cleanerDashboard/CleanerDashboard";
-import NewJobRequests from "./routes/cleanerRoutes/newJobRequests/NewJobRequests"
+import NewJobRequests from "./routes/cleanerRoutes/requestPages/newJobRequests/NewJobRequests"
 import JobDetails from "./routes/cleanerRoutes/jobDetails/JobDetails";
-import AcceptedJobRequests from "./routes/cleanerRoutes/acceptedJobRequests/AcceptedJobRequests";
-import CompletedJobRequests from "./routes/cleanerRoutes/completedJobRequests/CompletedJobRequests";
-import QuotedJobRequests from "./routes/cleanerRoutes/quotedJobRequests/QuotedJobRequests";
+import AcceptedJobRequests from "./routes/cleanerRoutes/requestPages/acceptedJobRequests/AcceptedJobRequests";
+import CompletedJobRequests from "./routes/cleanerRoutes/requestPages/completedJobRequests/CompletedJobRequests";
+import QuotedJobRequests from "./routes/cleanerRoutes/requestPages/quotedJobRequests/QuotedJobRequests";
 function App() {
   // const [cleaner, setCleaner] = useState(cleanerProfiles.find(profile => profile.id === 1)
   // );

@@ -1,4 +1,4 @@
-// src/data/quotedJobRequests.js
+// src/data/jobRequests/quotedJobRequests.js
 
 export const quotedJobRequests = [
   {
@@ -12,8 +12,8 @@ export const quotedJobRequests = [
     numberOfWindows: 5,
     windowTypes: "bay",
     additionalInfo: "Please use the side entrance.",
-    quote: 120,  // The quoted price from the cleaner
-    status: "Pending",  // Status could be "Pending", "Accepted", or "Rejected"
+    quote: 120,   // The quote submitted by the cleaner
+    status: "quoted",
     photos: []
   },
   {
@@ -26,9 +26,9 @@ export const quotedJobRequests = [
     numberOfFloors: 2,
     numberOfWindows: 12,
     windowTypes: "standard",
-    additionalInfo: "Please be careful with the landscaping.",
+    additionalInfo: "Be careful with the landscaping.",
     quote: 150,
-    status: "Pending",
+    status: "quoted",
     photos: []
   }
 ];
